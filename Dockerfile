@@ -1,4 +1,6 @@
-FROM golang:1.10
+FROM golang:1.10-alpine
+
+RUN apk add --update git && rm -rf /var/cache/apk/*
 
 RUN go get -u golang.org/x/vgo
 RUN vgo version
